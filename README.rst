@@ -11,6 +11,11 @@
 
 |
 
+To Install:
+```
+pip3 install https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-2.0.0.dev0-cp36-cp36m-manylinux2014_x86_64.whl
+python3 python/ray/setup-dev.py
+```
 
 **Ray provides a simple, universal API for building distributed applications.**
 
