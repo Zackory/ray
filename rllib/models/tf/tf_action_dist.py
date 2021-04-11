@@ -263,6 +263,8 @@ class DiagGaussian(TFActionDistribution):
     def __init__(self, inputs: List[TensorType], model: ModelV2):
         mean, log_std = tf.split(inputs, 2, axis=1)
         self.mean = mean
+        log_std = tf.clip_by_value(log_std, MIN_LOG_NN_OUTPUT,
+                                   MAX_LOG_NN_OUTPUT)
         self.log_std = log_std
         self.std = tf.exp(log_std)
         super().__init__(inputs, model)
